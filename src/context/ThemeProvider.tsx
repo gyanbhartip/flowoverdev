@@ -3,6 +3,7 @@
 import {
   type ReactNode,
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -16,18 +17,25 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [mode, setMode] = useState<"dark" | "light">("light");
+  const [mode, setMode] = useState<"dark" | "light">("dark");
 
-  useEffect(() => {
-    // handleThemeChange
-    if (mode === "dark") {
-      // setMode("light");
-      document.documentElement.classList.add("light");
+  const localTheme = localStorage.getItem("theme");
+  const handleThemeChange = useCallback(() => {
+    if (
+      localTheme === "dark" ||
+      (!localTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setMode("dark");
+      document.documentElement.classList.add("dark");
     } else {
-      // setMode("dark");
+      setMode("light");
       document.documentElement.classList.remove("dark");
     }
-  }, [mode]);
+  }, [localTheme]);
+
+  useEffect(() => {
+    handleThemeChange();
+  }, [handleThemeChange]);
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
