@@ -21,10 +21,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     // handleThemeChange
     if (mode === "dark") {
-      setMode("light");
+      // setMode("light");
       document.documentElement.classList.add("light");
     } else {
-      setMode("dark");
+      // setMode("dark");
       document.documentElement.classList.remove("dark");
     }
   }, [mode]);
