@@ -14,7 +14,7 @@ import Image from "next/image";
 const Theme = () => {
   const { mode, setMode } = useTheme();
   return (
-    <Menubar className="relative border-none bg-transparent shadow-none">
+    <Menubar className="relative border-none">
       <MenubarMenu>
         <MenubarTrigger className="focus:bg-light-900 data-[state=open]:bg-light-900 dark:focus:bg-dark-200 dark:data-[state=open]:bg-dark-200">
           {mode === "light" ? (
@@ -37,12 +37,13 @@ const Theme = () => {
           {themes.map((theme) => (
             <MenubarItem
               key={theme.label}
-              className="flex items-center gap-4 px-2.5 py-2 dark:focus:bg-dark-400"
+              className="flex items-center gap-4 px-2.5 py-2 focus:bg-light-700 dark:focus:bg-dark-400"
               onClick={() => {
                 if (theme.value !== "system") {
                   setMode(theme.value);
                   localStorage.setItem("theme", theme.value);
                 } else {
+                  setMode("");
                   localStorage.removeItem("theme");
                 }
               }}
