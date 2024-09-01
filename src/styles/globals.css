@@ -4,6 +4,7 @@
 
 @import url("./theme.css");
 
+html,
 body {
   font-family: "Inter", sans-serif;
 }
