@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const LeftSidebar = () => {
   const pathName = usePathname();
   return (
-    <nav className="flex min-h-screen flex-col justify-between px-6 pb-9 pt-36 shadow-sm max-md:pb-14">
+    <nav className="background-light900_dark200 light-border custom-scrollbar sticky left-0 top-0 flex h-screen min-h-screen flex-col justify-between overflow-y-auto border-r px-6 pb-8 pt-36 shadow-light-300 dark:shadow-none max-sm:hidden lg:w-[266px]">
       <div>
         {sidebarLinks.map((link) => {
           if (link.route === "/profile") {
@@ -32,7 +32,9 @@ const LeftSidebar = () => {
                 src={link.imgURL}
                 width={20}
               />
-              <p className={`${isActive ? "base-bold" : "base-medium"}`}>
+              <p
+                className={`${isActive ? "base-bold" : "base-medium"} max-lg:hidden`}
+              >
                 {link.label}
               </p>
             </Link>
@@ -52,19 +54,35 @@ const LeftSidebar = () => {
               src="/assets/icons/sign-out.svg"
               width={20}
             />
-            <p>Log Out</p>
+            <p className="max-lg:hidden">Log Out</p>
           </Link>
         </SignedIn>
         <SignedOut>
           <div className="flex flex-col gap-3">
             <Link href="/sign-in">
               <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-                <span className="primary-text-gradient">Log In</span>
+                <Image
+                  alt="Log In"
+                  className="invert-colors lg:hidden"
+                  height={20}
+                  src="/assets/icons/account.svg"
+                  width={20}
+                />
+                <span className="primary-text-gradient max-lg:hidden">
+                  Log In
+                </span>
               </Button>
             </Link>
             <Link href="/sign-in">
               <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
-                Sign Up
+                <Image
+                  alt="Sign Up"
+                  className="invert-colors lg:hidden"
+                  height={20}
+                  src="/assets/icons/sign-up.svg"
+                  width={20}
+                />
+                <span className="max-lg:hidden">Sign Up</span>
               </Button>
             </Link>
           </div>
