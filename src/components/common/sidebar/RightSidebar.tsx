@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const RightSidebar = () => {
   return (
-    <div className="background-light900_dark200 light-border custom-scrollbar sticky right-0 top-0 flex h-screen min-h-screen flex-col gap-14 overflow-y-auto border-l px-6 pb-8 pt-36 text-dark-500 shadow-light-300 dark:text-light-700 dark:shadow-none max-sm:hidden lg:w-[340px]">
+    <div className="background-light900_dark200 light-border custom-scrollbar sticky right-0 top-0 flex h-screen min-h-screen flex-col gap-14 overflow-y-auto border-l px-6 pb-8 pt-36 text-dark-500 shadow-light-300 dark:text-light-700 dark:shadow-none max-lg:max-w-[340px] max-sm:hidden lg:w-[340px]">
       <div>
         <h3 className="h3-bold mb-6">Hot Network</h3>
         <div className="flex flex-col">
