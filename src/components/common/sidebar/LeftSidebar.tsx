@@ -10,8 +10,8 @@ import { usePathname } from "next/navigation";
 const LeftSidebar = () => {
   const pathName = usePathname();
   return (
-    <nav className="background-light900_dark200 light-border custom-scrollbar sticky left-0 top-0 flex h-screen min-h-screen flex-col justify-between overflow-y-auto border-r px-6 pb-8 pt-36 shadow-light-300 dark:shadow-none max-sm:hidden lg:w-[266px]">
-      <div>
+    <section className="custom-scrollbar background-light900_dark200 light-border sticky left-0 top-0 flex h-screen w-fit flex-col justify-between overflow-y-auto border-r p-6 pt-36 shadow-light-300 dark:shadow-none max-sm:hidden lg:w-[266px]">
+      <div className="flex flex-1 flex-col gap-6">
         {sidebarLinks.map((link) => {
           if (link.route === "/profile") {
             return null;
@@ -60,7 +60,7 @@ const LeftSidebar = () => {
         <SignedOut>
           <div className="flex flex-col gap-3">
             <Link href="/sign-in">
-              <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+              <Button className="small-medium btn-secondary inline-flex h-9 min-h-[41px] w-full items-center justify-center rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-slate-50 shadow-none transition-colors hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 dark:focus-visible:ring-slate-300">
                 <Image
                   alt="Log In"
                   className="invert-colors lg:hidden"
@@ -74,7 +74,7 @@ const LeftSidebar = () => {
               </Button>
             </Link>
             <Link href="/sign-in">
-              <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+              <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 inline-flex h-9 min-h-[41px] w-full items-center justify-center rounded-lg border bg-slate-900 px-4 py-3 text-sm font-medium shadow-none transition-colors hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 dark:focus-visible:ring-slate-300">
                 <Image
                   alt="Sign Up"
                   className="invert-colors lg:hidden"
@@ -88,7 +88,7 @@ const LeftSidebar = () => {
           </div>
         </SignedOut>
       </div>
-    </nav>
+    </section>
   );
 };
 
