@@ -11,7 +11,7 @@
     "deps:update": "bunx npm-check-updates --root --format group -i"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.4.0",
+    "@clerk/nextjs": "^6.5.0",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-menubar": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
@@ -31,11 +31,11 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint": "^9.6.1",
     "@types/eslint__eslintrc": "^2.1.2",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.9.3",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.14.0",
-    "@typescript-eslint/parser": "^8.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
     "eslint": "^9.15.0",
     "eslint-config-next": "^15.0.3",
     "eslint-config-prettier": "^9.1.0",
@@ -44,11 +44,11 @@
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "prettier-eslint": "^16.3.0",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwind-merge": "^2.5.4",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   },
   "ct3aMetadata": {
     "initVersion": "7.36.2"
